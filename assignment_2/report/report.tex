@@ -1,0 +1,91 @@
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[10pt, a4paper]{article}
+
+
+\usepackage[latin1]{inputenc} %gère les caractères accentués et symboles spécifiques de l?alphabet d?une langue
+\usepackage[T1]{fontenc}%gere les polices de caractères (definition de la position des caractères dans une police)
+\usepackage{lmodern}%police vectorielle
+\usepackage{hyperref}%transforme toutes les références internes du document en hyperliens
+\usepackage{fancyhdr}%pour des entêtes améliorés
+\usepackage{lastpage}%pour pouvoir utiliser 
+\usepackage{xcolor,graphicx}%pour des documents en couleur et insérer des images
+\usepackage{pgf,tikz}%package permettant d?inclure des figures au format PDF en restant dans l?environnement LATEX.
+\usepackage{pgfplots}%pour tracer des courbes/graphiques
+\usepackage{framed}%minipages avec cadre autour
+\bibliographystyle{ieeetr}%style de bibliographie
+\usetikzlibrary{arrows}%dessin de fleches
+\usepackage{caption}%permet de customiser les légendes dans des environnements flottants
+\usepackage{amsmath,amssymb,color,bm}%charge le formulaire mathematique+symb+caracteres gras  avec \boldsymbol en restant un caract mathematique en italique
+\usepackage{ulem}
+\usepackage{layout}%permet de tracer la mise en page avec \layout
+\usepackage{cite} % takes care of citations
+\newcommand*{\Coord}[3]{% 
+  \ensuremath{\overrightarrow{#1}\, 
+    \begin{pmatrix} 
+      #2\\ 
+      #3 
+    \end{pmatrix}}}
+
+%miseenpage
+\setlength{\oddsidemargin}{0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\textheight}{24.7cm}
+\setlength{\marginparwidth}{0cm}
+\setlength{\textwidth}{15.8cm}
+\setlength{\marginparsep}{0pt}
+\setlength{\voffset}{-1cm}
+\setlength{\hoffset}{-0.29cm}
+\setlength{\headheight}{14.5pt} %pas vraiment nécéssaire mais crée des warnings sans...
+
+%\setlength{\parindent}{0pt} %indentation
+
+
+\setlength{\oddsidemargin}{0cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\textheight}{24cm}
+\setlength{\marginparwidth}{0.2cm}
+\setlength{\textwidth}{16cm}
+\setlength{\voffset}{-0.5cm}
+\setlength{\headheight}{14.5pt} %pas vraiment nécéssaire mais crée des warnings sans...
+%++++++++++++++++++++++++++++++++++++++++
+
+
+\begin{document}
+
+\title{Mini Project 2 - Deep Learning}
+\author{Florian \textsc{Barral}}
+
+\date{\today}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+\section*{Question 2}
+
+\begin{align*}
+& W^*  = \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmin}}|| WX-Y||_F \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmin}} \langle WX-Y | WX-Y \rangle \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmin}} ||WX||^2 + ||Y||^2 -2 \langle WX | Y \rangle \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmax}} \langle WX | Y \rangle \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmax}} \langle W | YX^T \rangle \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmax}}  \langle W | U\Sigma V^T \rangle \\
+\iff & W^* =  \underset{W \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmax}}  \langle U^T W V | \Sigma  \rangle \\
+\iff & W^* =  U \underbrace{\underset{W' \in \mathcal{O}_d(\mathbb{R})}{\mathrm{argmax}}  \langle  W' | \Sigma  \rangle}_{Id}  V^T\\
+\iff & W^* =  UV^T\\
+\end{align*}
+\end{document}
+
+%\mathbf M=(M_{i,j})_{(i,j) \in{[\![ 1,n]\!]\times[\![ 1,m]\!]}},~~~  \mathbf {MM^T}=((MM^T)_{i,j})_{(i,j) \in{[\![ 1,n]\!]^2}},~~~  \mathbf {M^TM}=((M^TM)_{i,j})_{(i,j) \in{[\![ 1,n]\!]^2}}
+% \begin{align*}
+%\forall (i,j) \in [\![ 1,n]\!]^2, ~~~~~
+%((MM^T)_{i,j} & = \sum_{k=1}^{m} M_{i,k} M^T_{k,j} \\
+%& = \sum_{k=1}^{m} M_{i,k} M_{j,k} 
+%\end{align*}
+
+%\begin{align*}
+%\forall (i,j) \in [\![ 1,n]\!]^2, ~~~~~
+%(M^TM)_{i,j} & = \sum_{k=1}^{m} M^T_{i,k} M_{k,j} \\
+%& = \sum_{k=1}^{m} M_{k,i} M_{k,j} 
+%\end{align*}
