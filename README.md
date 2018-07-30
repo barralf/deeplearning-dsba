@@ -14,7 +14,8 @@ regression in Keras
 
 - Assessment 3: deep reinforcement learning techniques on a simple game
 
-# Launchable via binder
+# Launchable via binder (WIP: To be fixed ...)
+(it's just a try. Notebooks cannot be fully run because of some missing dependencies and files)
 
 [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/barralf/deeplearning-dsba/master?urlpath=lab) : online Conda environment
 
