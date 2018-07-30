@@ -7,6 +7,6 @@ dependencies:
   - numpy
   - scipy
   - pandas
-  - urllib2 
+  - urllib
   - sklearn
   - keras
