@@ -1,0 +1,14 @@
+name: deeplearning-dsba
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pandas
+  - io
+  - os
+  - numpy
+  - scipy
+  - pandas
+  - urllib2 
+  - sklearn
+  - keras
