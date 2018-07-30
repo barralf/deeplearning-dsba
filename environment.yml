@@ -4,8 +4,6 @@ channels:
 dependencies:
   - python
   - pandas
-  - io
-  - os
   - numpy
   - scipy
   - pandas
