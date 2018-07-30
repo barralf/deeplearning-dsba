@@ -7,5 +7,5 @@ dependencies:
   - numpy
   - scipy
   - pandas
-  - sklearn
+  - scikit-learn
   - keras
